@@ -1,7 +1,35 @@
 {
-  "cSpell.words": [
-    "bumpp",
-    "gymrat",
-    "nestjs"
-  ]
+  "cSpell.words": ["bumpp", "gymrat", "nestjs"],
+
+  "postman.settings.dotenv-detection-notification-visibility": false,
+  // 📌 Forzar Prettier como formateador por defecto
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+
+  // 📌 Asegurar que VSCode use Prettier correctamente
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // 📌 Sincronizar ESLint con Prettier (para evitar conflictos)
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always",
+    "source.fixAll": "always"
+  },
+
+  // 📌 Forzar uso de LF en Windows y Linux
+  "files.eol": "\n",
+
+  // 📌 Evitar problemas de rutas en Windows/Linux
+  "eslint.validate": ["javascript", "typescript", "typescriptreact", "json"],
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+
+  // 📌 Mejor compatibilidad de ESLint en Windows
+  "eslint.nodePath": "node_modules/eslint",
+
+  // 📌 Opcional: Mostrar errores de ESLint en tiempo real
+  "editor.diagnostic.enable": true
 }

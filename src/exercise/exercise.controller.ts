@@ -1,5 +1,17 @@
 // Controller - maneja las direcciones que pasan por nuestro servidor
-import { Controller, Post, HttpStatus, Res, Body, Get, Param, NotFoundException, Delete, Query, Put } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  HttpStatus,
+  Res,
+  Body,
+  Get,
+  Param,
+  NotFoundException,
+  Delete,
+  Query,
+  Put,
+} from '@nestjs/common';
 // Type para el @res
 import { Response } from 'express';
 // DTO class
@@ -12,8 +24,12 @@ export class ExerciseController {
 
   // POST --
   @Post('/create')
-  async createExercise(@Res() res: Response, @Body() createExerciseDto: CreateExerciseDto) {
-    const createdExercise = await this.exerciseService.createExercise(createExerciseDto);
+  async createExercise(
+    @Res() res: Response,
+    @Body() createExerciseDto: CreateExerciseDto,
+  ) {
+    const createdExercise =
+      await this.exerciseService.createExercise(createExerciseDto);
     return res.status(HttpStatus.OK).json({
       message: 'Product successfully created',
       createdExercise,
@@ -34,8 +50,12 @@ export class ExerciseController {
   }
   // DELETE --
   @Delete('/delete')
-  async deleteExercise(@Res() res: Response, @Query('exerciseID') exerciseID: string) {
-    const deletedExercise = await this.exerciseService.deleteExercise(exerciseID);
+  async deleteExercise(
+    @Res() res: Response,
+    @Query('exerciseID') exerciseID: string,
+  ) {
+    const deletedExercise =
+      await this.exerciseService.deleteExercise(exerciseID);
     if (!deletedExercise) throw new NotFoundException('exercise not found');
     return res.status(HttpStatus.OK).json({
       message: 'exercise deleted successfully',
@@ -44,9 +64,17 @@ export class ExerciseController {
   }
   // UPDATE --
   @Put('/update')
-  async updateExercise(@Res() res: Response, @Body() createExerciseDto: CreateExerciseDto, @Query('exerciseID') exerciseID: string) {
-    const updatedExercise = await this.exerciseService.updateExercise(exerciseID, createExerciseDto);
-    if (!updatedExercise) throw new NotFoundException('Exercise does not exist!');
+  async updateExercise(
+    @Res() res: Response,
+    @Body() createExerciseDto: CreateExerciseDto,
+    @Query('exerciseID') exerciseID: string,
+  ) {
+    const updatedExercise = await this.exerciseService.updateExercise(
+      exerciseID,
+      createExerciseDto,
+    );
+    if (!updatedExercise)
+      throw new NotFoundException('Exercise does not exist!');
     return res.status(HttpStatus.OK).json({
       message: 'Exercise updated successfully',
       updatedExercise,
