@@ -1,0 +1,29 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "yoavbls.pretty-ts-errors",
+    "dbaeumer.vscode-eslint",
+    "postman.postman-for-vscode",
+    "humao.rest-client",
+    "aaron-bond.better-comments",
+    "formulahendry.code-runner",
+    "vivaxy.vscode-conventional-commits",
+    "gruntfuggly.todo-tree",
+    "ms-ceintl.vscode-language-pack-es",
+    "streetsidesoftware.code-spell-checker-spanish",
+    "christian-kohler.path-intellisense",
+    "mongodb.mongodb-vscode",
+    "pkief.material-icon-theme",
+    "xabikos.javascriptsnippets",
+    "visualstudioexptteam.vscodeintellicode-completions",
+    "visualstudioexptteam.intellicode-api-usage-examples",
+    "visualstudioexptteam.vscodeintellicode",
+    "wix.vscode-import-cost",
+    "mhutchie.git-graph",
+    "usernamehw.errorlens",
+    "ms-azuretools.vscode-docker",
+    "redhat.vscode-yaml",
+    "eamodio.gitlens",
+    "streetsidesoftware.code-spell-checker"
+  ]
+}
