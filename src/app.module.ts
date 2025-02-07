@@ -7,7 +7,10 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   // se genera e importa el modulo
-  imports: [ExerciseModule, MongooseModule.forRoot('mongodb://localhost/gymrat-nest')],
+  imports: [
+    ExerciseModule,
+    MongooseModule.forRoot('mongodb://localhost/gymrat-nest'),
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

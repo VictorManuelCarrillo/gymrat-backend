@@ -7,7 +7,9 @@ import { CreateExerciseDto } from './dto/exercise.dto';
 // clase que puede compartir los métodos con otras clases
 @Injectable()
 export class ExerciseService {
-  constructor(@InjectModel('Exercise') private readonly exerciseModel: Model<Exercise>) {}
+  constructor(
+    @InjectModel('Exercise') private readonly exerciseModel: Model<Exercise>,
+  ) {}
 
   async getExercises(): Promise<Exercise[]> {
     const exercises = await this.exerciseModel.find();
@@ -22,13 +24,22 @@ export class ExerciseService {
     return exercise;
   }
 
-  async createExercise(createExerciseDto: CreateExerciseDto): Promise<Exercise> {
+  async createExercise(
+    createExerciseDto: CreateExerciseDto,
+  ): Promise<Exercise> {
     const createdExercise = new this.exerciseModel(createExerciseDto);
     return await createdExercise.save();
   }
 
-  async updateExercise(exerciseID: string, createExerciseDto: CreateExerciseDto): Promise<Exercise> {
-    const updatedExercise = await this.exerciseModel.findByIdAndUpdate(exerciseID, createExerciseDto, { new: true });
+  async updateExercise(
+    exerciseID: string,
+    createExerciseDto: CreateExerciseDto,
+  ): Promise<Exercise> {
+    const updatedExercise = await this.exerciseModel.findByIdAndUpdate(
+      exerciseID,
+      createExerciseDto,
+      { new: true },
+    );
     if (!updatedExercise) {
       throw new Error('Exercise not found');
     }
@@ -36,7 +47,8 @@ export class ExerciseService {
   }
 
   async deleteExercise(exerciseID: string): Promise<Exercise> {
-    const deletedExercise = await this.exerciseModel.findByIdAndDelete(exerciseID);
+    const deletedExercise =
+      await this.exerciseModel.findByIdAndDelete(exerciseID);
     if (!deletedExercise) {
       throw new Error('Exercise not found');
     }
