@@ -6,4 +6,5 @@ export class CreateExerciseDto {
   readonly series: number;
   readonly imageUrl: string;
   readonly createdAt: Date;
+  readonly title: string;
 }
