@@ -4,10 +4,12 @@ import { AppService } from './app.service';
 import { ExerciseModule } from './exercise/exercise.module';
 //mongoose
 import { MongooseModule } from '@nestjs/mongoose';
+import { RutinasModule } from './rutina/rutina.module';
 
 @Module({
   // se genera e importa el modulo
   imports: [
+    RutinasModule,
     ExerciseModule,
     MongooseModule.forRoot('mongodb://localhost/gymrat-nest'),
   ],
